@@ -1,0 +1,34 @@
+import { useCallback, useState } from "react";
+
+const useOnScreen = ({
+  root = null,
+  rootMargin = "0px",
+  threshold = 0,
+} = {}) => {
+  const [observer, setOserver] = useState();
+  const [isIntersecting, setIntersecting] = useState(false);
+
+  const measureRef = useCallback(
+    (node) => {
+      if (node) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              observer.unobserve(entry.target); // To avoid sending a request during rollback 
+            }
+            setIntersecting(entry.isIntersecting);
+          },
+          { root, rootMargin, threshold }
+        );
+
+        observer.observe(node);
+        setOserver(observer);
+      }
+    },
+    [root, rootMargin, threshold]
+  );
+
+  return { measureRef, isIntersecting, observer };
+};
+
+export default useOnScreen;
