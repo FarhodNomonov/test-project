@@ -1,6 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+}
+.app {
+  margin: 50px 100px;
+}
+.search_inp {
+  position: relative;
+  width: 60%;
+}
+.search_inp svg {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+.search_inp input {
+  width: 100%;
+  background: #5a5c66;
+  border: none;
+  padding: 15px 20px;
+  color: #fff;
+  outline: none;
+  margin-bottom: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table th {
+  background: #474955;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  color: #fff;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+table th svg {
+  margin-left: 20px;
+}
+table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.pagination_btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.pagination_btn button {
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 500;
+  background: transparent;
+}
+
+.active_num {
+  color: #7ebc3c;
+}
+.pagination_num button {
+  margin: 0 5px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24.78px;
+}
+.flex {
+  display: flex;
+  align-items: center;
 }
