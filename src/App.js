@@ -37,7 +37,7 @@ const App = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (searchTerm.trim() === "") {
